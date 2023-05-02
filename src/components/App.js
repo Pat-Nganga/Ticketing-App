@@ -1,12 +1,18 @@
 
 import React from 'react';
-// import EventList from './EventList';
+import NavBar from './NavBar';
+import TicketList from './TicketList';
+
 
 function App() {
-  return 
-    <p>Patricia</p>
-    // <EventList />
   
+  return (
+    <TicketList/>
+  )
+  
+
+  
+
 }
 
 export default App;
