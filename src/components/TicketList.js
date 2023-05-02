@@ -26,7 +26,7 @@ function TicketList() {
               <h2 className='ticket-name'>{ticket.name}</h2>
               <p className='ticket-location'>Location:{ticket.location}</p>
               <p className='ticket-date'>Date:{ticket.date}</p>
-              <p className='ticket-capacity'>Remaining tickets:{ticket.capacity}</p>
+              <p className='ticket-capacity'>Remaining tickets:::{ticket.capacity}</p>
             </div>
           </div>
         ))}
