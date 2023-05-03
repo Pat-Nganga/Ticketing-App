@@ -11,7 +11,7 @@ function NavBar() {
       .then((tickets) => setTickets(tickets))
   }, [])
 
-  const handleSearchChange = (event) => {
+  const handleSearchSubmit = (event) => {
     setSearchTerm(event.target.value)
   }
 
@@ -20,38 +20,43 @@ function NavBar() {
   )
 
   return (
-    <nav className='menu'>
+    <div className='menu'>
       <div className='logo'>
         <h3>TICKETOPIA</h3>
       </div>
-      <ul className='navigation'>
-        <li className='nav-link'>
-          <a href='/'>Home</a>
-        </li>
-        <li className='nav-link'>
-          <a href='/contacts'>Contacts</a>
-        </li>
-        <li className='nav-link'>
-          <a href='/events'>Events</a>
-        </li>
-        <li className='search'>
-          <form>
-            <input
-              type='text'
-              placeholder='Search'
-              value={searchTerm}
-              onChange={handleSearchChange}
-              id='search-input'
-              className='input'
-            />
-            <button type='submit' className='search-button'>
-            
-            </button>
-          </form>
-        
-        </li>
-      </ul>
-    </nav>
+      <nav>
+        <ul className='navigation'>
+          <li className='nav-link'>
+            <a href='/'>Home</a>
+          </li>
+          <li className='nav-link'>
+            <a href='/contacts'>Contacts</a>
+          </li>
+          <li className='nav-link'>
+            <a href='/events'>Events</a>
+          </li>
+        </ul>
+      </nav>
+      <div className='search'>
+        <form>
+          <input
+            type='text'
+            placeholder='Search here'
+            value={searchTerm}
+            // onChange={(e) => handleSearchSubmit(e.target.value)}
+            id='search-input'
+            className='input'
+          />
+          <button
+            type='submit'
+            onSubmit={(e) => handleSearchSubmit(e.target.value)}
+            className='search-button'
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
   )
 }
 
