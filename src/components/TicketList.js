@@ -46,7 +46,7 @@ function TicketList() {
               </p>
               <p className="ticket-date"><strong>Date:</strong>{ticket.date}</p>
               <p className="ticket-capacity">
-               <strong> Remaining tickets::</strong>{ticket.capacity}
+               <strong> Remaining tickets:</strong>{ticket.capacity}
               </p>
 
             </div>
