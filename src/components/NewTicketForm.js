@@ -58,16 +58,6 @@ function NewTicketForm() {
           />
         </div>
 
-        {/* <div>
-        <label htmlFor="image url">Image URL:</label>
-        <input
-          id="image url"
-          value={image}
-          onChange={(event) => setTitle(event.target.value)}
-        />
-
-      </div> */}
-
         <br />
 
         <div>

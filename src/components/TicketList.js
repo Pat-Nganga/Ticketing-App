@@ -11,6 +11,7 @@ function TicketList() {
       .catch((error) => console.error(error))
   }, [])
 
+ 
   
     function updateCapacity(ticketId) {
       const updatedTickets = tickets.map((ticket) => {
@@ -18,12 +19,13 @@ function TicketList() {
           return {
             ...ticket,
             available_tickets: ticket.available_tickets - 1,
-          }
+          };
         }
-        return ticket
-      })
-      setTickets(updatedTickets)
+        return ticket;
+      });
+      setTickets(updatedTickets);
     }
+
 
 
    
@@ -42,14 +44,18 @@ function TicketList() {
             <div className="ticket-card">
               <h2 className="ticket-name">{ticket.name}</h2>
               <p className="ticket-location">
-                <strong>Location:</strong>{ticket.location}
+                <strong>Location:</strong>
+                {ticket.location}
               </p>
-              <p className="ticket-date"><strong>Date:</strong>{ticket.date}</p>
+              <p className="ticket-date">
+                <strong>Date:</strong>
+                {ticket.date}
+              </p>
               <p className="ticket-capacity">
-               <strong> Remaining tickets:</strong>{ticket.capacity}
-              
+                <strong> Remaining tickets:</strong>
+                {ticket.available_tickets}
               </p>
-
+              <button onClick={() => updateCapacity(ticket.id)}>Buy btn</button>
             </div>
           </div>
         ))}
