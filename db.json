@@ -104,7 +104,7 @@
       "name": "Kike Neuro - Soul With Patience Shalom",
       "location": "Arbor Place,Lavington",
       "date": "Sunday,09 July 2023",
-      "image":"https://www.ticketsasa.com/components/com_enmasse/upload/2023_07_09_KIKe_Neuro-Soul_with_Patience_Shalom_July_2023.png1681753359.jpg",
+      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_07_09_KIKe_Neuro-Soul_with_Patience_Shalom_July_2023.png1681753359.jpg",
       "capacity": "30",
       "available_tickets": "10"
     },
@@ -135,5 +135,6 @@
       "capacity": "30",
       "available_tickets": "10"
     }
+   
   ]
 }
