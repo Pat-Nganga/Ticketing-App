@@ -1,6 +1,7 @@
 // Here is the create function to create and add a new ticket
 
 import React, { useState } from "react";
+import './css/NewTicketForm.css'
 
 function NewTicketForm() {
   const [image, setImage] = useState("");
@@ -44,65 +45,76 @@ function NewTicketForm() {
   };
 
   return (
-<>
-<h2>Create Form</h2>
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="image">Image URL:</label>
+    <>
+      <h2>Create Form</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="image-url">Image URL:</label>
+          <input
+            id="image-url"
+            type="url"
+            value={image}
+            onChange={(event) => setImage(event.target.value)}
+          />
+        </div>
+
+        {/* <div>
+        <label htmlFor="image url">Image URL:</label>
         <input
-          id="title"
-          type="text"
+          id="image url"
           value={image}
           onChange={(event) => setTitle(event.target.value)}
         />
-      </div>
-      <br />
 
-      <div>
-        <label htmlFor="title">Title:</label>
-        <input
-          id="title"
-          type="text"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        />
-      </div>
-      <br/>
+      </div> */}
 
-      <div>
-        <label htmlFor="location">Location:</label>
-        <input
-          id="location"
-          value={location}
-          onChange={(event) => setLocation(event.target.value)}
-        />
-      </div>
-      <br/>
+        <br />
 
-      <div>
-        <label htmlFor="date">Date:</label>
-        <input
-          id="date"
-          type="text"
-          value={date}
-          onChange={(event) => setDate(event.target.value)}
-        />
-      </div>
-      <br />
+        <div>
+          <label htmlFor="title">Title:</label>
+          <input
+            id="title"
+            type="text"
+            value={title}
+            onChange={(event) => setTitle(event.target.value)}
+          />
+        </div>
+        <br />
 
-      <div>
-        <label htmlFor="capacity">Capacity:</label>
-        <input
-          id="capacity"
-          type="number"
-          value={capacity}
-          onChange={(event) => setCapacity(event.target.value)}
-        />
-      </div>
-      <br />
+        <div>
+          <label htmlFor="location">Location:</label>
+          <input
+            id="location"
+            value={location}
+            onChange={(event) => setLocation(event.target.value)}
+          />
+        </div>
+        <br />
 
-      <button type="submit">Add Ticket</button>
-    </form>
+        <div>
+          <label htmlFor="date">Date:</label>
+          <input
+            id="date"
+            type="text"
+            value={date}
+            onChange={(event) => setDate(event.target.value)}
+          />
+        </div>
+        <br />
+
+        <div>
+          <label htmlFor="capacity">Capacity:</label>
+          <input
+            id="capacity"
+            type="number"
+            value={capacity}
+            onChange={(event) => setCapacity(event.target.value)}
+          />
+        </div>
+        <br />
+
+        <button type="submit">Add Ticket</button>
+      </form>
     </>
   );
 }
