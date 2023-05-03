@@ -1,18 +1,14 @@
-
-import React from 'react';
-import NavBar from './NavBar';
-import TicketList from './TicketList';
-
+import React from 'react'
+import NavBar from './NavBar'
+import TicketList from './TicketList'
 
 function App() {
-  
   return (
-    <TicketList/>
+    <>
+      <NavBar />
+      <TicketList />
+    </>
   )
-  
-
-  
-
 }
 
-export default App;
+export default App
