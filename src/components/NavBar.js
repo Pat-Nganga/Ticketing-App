@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import './css/NavBar.css'
 
 function NavBar() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -19,26 +22,39 @@ function NavBar() {
   )
 
   return (
-    <nav>
-      <ul>
-        <li>
+    <nav className='menu'>
+      <div className='logo'>
+        <h3>TICKETOPIA</h3>
+      </div>
+      <ul className='navigation'>
+        <li className='nav-link'>
           <a href='/'>Home</a>
         </li>
-        <li>
+        <li className='nav-link'>
           <a href='/contacts'>Contacts</a>
         </li>
-        <li>
+        <li className='nav-link'>
           <a href='/events'>Events</a>
         </li>
-        <li>
+        <li className='search'>
           <form>
             <input
               type='text'
               placeholder='Search'
               value={searchTerm}
               onChange={handleSearchChange}
+              id='search-input'
+              className='input'
             />
+            <button type='submit' className='search-button'>
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
           </form>
+          <ul>
+            {filteredTickets.map((ticket) => (
+              <li key={ticket.id}>{ticket.name}</li>
+            ))}
+          </ul>
         </li>
       </ul>
     </nav>
