@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 import TicketList from './TicketList'
+import NewTicketForm from './NewTicketForm'
 
 const App = () => {
   const [data, setData] = useState([])
@@ -31,7 +32,12 @@ const App = () => {
         setEndPoint={setEndPoint}
       />
       <TicketList tickets={data} setData={setData} fetchData={fetchData} />
+      <NewTicketForm />
     </div>
+    
+    
+    
+    
   )
 }
 
