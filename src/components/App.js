@@ -4,14 +4,12 @@ import TicketList from './TicketList';
 import NewTicketForm from './NewTicketForm';
 
 function App() {
-  
   return (
     <>
     <TicketList/>
     <NewTicketForm />
-    
     </>
   )
 }
 
-export default App;
+export default App
