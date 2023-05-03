@@ -46,7 +46,7 @@ function TicketList() {
                 Remaining tickets:{ticket.capacity - ticket.available_tickets}
               </p>
               <button onClick={() => updateCapacity(ticket.id)}>
-                Buy Ticket
+                Buy btn
               </button>
             </div>
           </div>
