@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './css/NavBar.css'
+ import './css/NavBar.css'
 
 function NavBar() {
   const [searchTerm, setSearchTerm] = useState('')
