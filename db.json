@@ -6,8 +6,8 @@
       "location": "Machakos People's Park",
       "date": "Wednesday, 3rd May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/RX1_2023_Official_Poster_5.jpg1681972071.jpg",
-      "capacity": "20",
-      "available tickets": "4"
+      "capacity": "100",
+      "available_tickets": "4"
     },
     {
       "id": 2,
@@ -15,8 +15,8 @@
       "location": "The Vineyard, Ridgeways",
       "date": "Saturday, 6th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/WhatsApp_Image_2023-04-10_at_19.15.15.jpeg1681194508.jpg",
-      "capacity": "30",
-      "available tickets": "10"
+      "capacity": "80",
+      "available_tickets": "10"
     },
     {
       "id": 3,
@@ -24,8 +24,8 @@
       "location": "Ayira's NeoSoul Cafe",
       "date": "Saturday, 6th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_05_03_A_City_On_The_Moon.png1678679495.jpg",
-      "capacity": "30",
-      "available tickets": "10"
+      "capacity": "50",
+      "available_tickets": "10"
     },
     {
       "id": 4,
@@ -33,8 +33,8 @@
       "location": "Rift Valley Sports Club",
       "date": "Saturday, 6th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/PHOTO-2023-04-22-09-51-52.jpg1682146628.jpg",
-      "capacity": "30",
-      "available tickets": "10"
+      "capacity": "110",
+      "available_tickets": "10"
     },
     {
       "id": 5,
@@ -42,8 +42,8 @@
       "location": "Sax and Violin Lounge, Waterfront Karen",
       "date": "Saturday, 6th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/IMG-20230417-WA0005.jpg1681798863.jpg",
-      "capacity": "30",
-      "available tickets": "10"
+      "capacity": "50",
+      "available_tickets": "10"
     },
     {
       "id": 6,
@@ -51,8 +51,8 @@
       "location": "Ayira's Neo - Soul Cafe Shiko Rd, off Elgeyo Marak",
       "date": "Sunday, 7th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_05_07_KIKe_Neuro-Soul_with_Ianafri.png1681752658.jpg",
-      "capacity": "30",
-      "available tickets": "10"
+      "capacity": "60",
+      "available_tickets": "10"
     },
     {
       "id": 7,
@@ -60,8 +60,8 @@
       "location": "Ayira's Neo - Soul Cafe Shiko Rd, off Elgeyo Marak",
       "date": "Friday, 12th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/Final_12-14_May_2023_AAS_Poster.jpg1680683701.jpg",
-      "capacity": "30",
-      "available tickets": "10"
+      "capacity": "40",
+      "available_tickets": "10"
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "date": "Saturday,27th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/TinyMamaMay.jpg1682316529.jpg",
       "capacity": "30",
-      "available tickets": "10"
+      "available_tickets": "10"
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "date": "Sunday,28th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/PHOTO-2023-05-01-14-00-47.jpg1682939497.jpg",
       "capacity": "30",
-      "available tickets": "10"
+      "available_tickets": "10"
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "date": "Saturday,10th June 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/KHS_FLOWER_BALL_.jpeg1679301152.jpg",
       "capacity": "30",
-      "available tickets": "10"
+      "available_tickets": "10"
     },
     {
       "id": 11,
@@ -97,7 +97,7 @@
       "date": "Sunday,11th June 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_06_11_An_Afternoon_of_Jazz_and_Old_School_Kenyan_RnB_with_Mkavita_and_Jay.png1679989619.jpg",
       "capacity": "30",
-      "available tickets": "10"
+      "available_tickets": "10"
     },
     {
       "id": 12,
@@ -106,7 +106,7 @@
       "date": "Sunday,09 July 2023",
       "image":"https://www.ticketsasa.com/components/com_enmasse/upload/2023_07_09_KIKe_Neuro-Soul_with_Patience_Shalom_July_2023.png1681753359.jpg",
       "capacity": "30",
-      "available tickets": "10"
+      "available_tickets": "10"
     },
     {
       "id": 13,
@@ -115,7 +115,7 @@
       "date": "Sunday,23 July 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_07_23_Mkavita_-_Shadows_EP_Launch.png1678681502.jpg",
       "capacity": "30",
-      "available tickets": "10"
+      "available_tickets": "10"
     },
     {
       "id": 14,
@@ -124,7 +124,7 @@
       "date": "Saturday,02 September 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/TLRM_-_IG.png1681289663.jpg",
       "capacity": "30",
-      "available tickets": "10"
+      "available_tickets": "10"
     },
     {
       "id": 15,
@@ -133,7 +133,7 @@
       "date": "Thursday,08-09 June 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_Sustainable_Tourism.jpeg1673257925.jpg",
       "capacity": "30",
-      "available tickets": "10"
+      "available_tickets": "10"
     }
   ]
 }
