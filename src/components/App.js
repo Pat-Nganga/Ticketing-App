@@ -7,7 +7,10 @@ import TicketList from './TicketList';
 function App() {
   
   return (
-    <TicketList/>
+    <>
+      <NavBar />
+      <TicketList />
+    </>
   )
   
 
