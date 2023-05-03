@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './css/NavBar.css'
 
 function NavBar() {
@@ -47,14 +45,10 @@ function NavBar() {
               className='input'
             />
             <button type='submit' className='search-button'>
-              <FontAwesomeIcon icon={faSearch} />
+            
             </button>
           </form>
-          <ul>
-            {filteredTickets.map((ticket) => (
-              <li key={ticket.id}>{ticket.name}</li>
-            ))}
-          </ul>
+        
         </li>
       </ul>
     </nav>

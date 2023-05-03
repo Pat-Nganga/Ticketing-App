@@ -17,7 +17,7 @@ function TicketList() {
         if (ticket.id === ticketId) {
           return {
             ...ticket,
-            available_tickets: ticket.available_tickets - 1,
+            available_tickets: ticket.available_tickets - 1 ,
           }
         }
         return ticket
@@ -28,8 +28,7 @@ function TicketList() {
 
    
   return (
-    <div className='ticket-list-container'>
-      {/* <h1>Ticket List</h1> */}
+    <div className='ticket-list-container'>      
       <div className='ticket-cards-container'>
         {tickets.map((ticket) => (
           <div key={ticket.id} className='ticket-card'>
@@ -47,11 +46,10 @@ function TicketList() {
                 Remaining tickets:{ticket.capacity - ticket.available_tickets}
               </p>
               <button onClick={() => updateCapacity(ticket.id)}>
-                Buy btn
+                Buy Ticket
               </button>
 
-              <p className='ticket-capacity'>Remaining tickets:::{ticket.capacity}</p>
-
+             
             </div>
           </div>
         ))}
