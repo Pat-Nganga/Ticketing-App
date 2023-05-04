@@ -1,15 +1,16 @@
-import React from 'react';
-import NavBar from './NavBar';
-import TicketList from './TicketList';
-import NewTicketForm from './NewTicketForm';
+import React from "react";
+
+import TicketList from "./TicketList";
+import NewTicketForm from "./NewTicketForm";
+// import UpdateTicketButton from './UpdateTicketButton';
 
 function App() {
   return (
     <>
-    <TicketList/>
-    <NewTicketForm />
+      <TicketList />
+      <NewTicketForm />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
