@@ -10,42 +10,6 @@
       "available_tickets": "4"
     },
     {
-      "id": 2,
-      "name": "The Maze, 3rd Edition",
-      "location": "The Vineyard, Ridgeways",
-      "date": "Saturday, 6th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/WhatsApp_Image_2023-04-10_at_19.15.15.jpeg1681194508.jpg",
-      "capacity": "80",
-      "available_tickets": "10"
-    },
-    {
-      "id": 3,
-      "name": "A City on the Moon",
-      "location": "Ayira's NeoSoul Cafe",
-      "date": "Saturday, 6th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_05_03_A_City_On_The_Moon.png1678679495.jpg",
-      "capacity": "50",
-      "available_tickets": "10"
-    },
-    {
-      "id": 4,
-      "name": "Walker Town Nakuru",
-      "location": "Rift Valley Sports Club",
-      "date": "Saturday, 6th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/PHOTO-2023-04-22-09-51-52.jpg1682146628.jpg",
-      "capacity": "110",
-      "available_tickets": "10"
-    },
-    {
-      "id": 5,
-      "name": "Afrokestra",
-      "location": "Sax and Violin Lounge, Waterfront Karen",
-      "date": "Saturday, 6th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/IMG-20230417-WA0005.jpg1681798863.jpg",
-      "capacity": "50",
-      "available_tickets": "10"
-    },
-    {
       "id": 6,
       "name": "Kike Neuro-Soul Ianafri",
       "location": "Ayira's Neo - Soul Cafe Shiko Rd, off Elgeyo Marak",
@@ -125,23 +89,6 @@
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/TLRM_-_IG.png1681289663.jpg",
       "capacity": "30",
       "available_tickets": "10"
-    },
-    {
-      "id": 15,
-      "name": "2023 Sustainable Tourism Africa Summit",
-      "location": "Mombasa,Coast of Kenya",
-      "date": "Thursday,08-09 June 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_Sustainable_Tourism.jpeg1673257925.jpg",
-      "capacity": "30",
-      "available_tickets": "10"
-    },
-    {
-      "image": "https://www.ticketsasa.com/images/images.php?src=components/com_enmasse/upload/TLRM_-_IG.png1681289663.jpg&h=320&w=320&zc=1&q=100&s=1&f=3,5|4,-5",
-      "title": "run",
-      "location": "nairobi",
-      "date": "Saturday, 2nd September 2023",
-      "capacity": "68",
-      "id": 16
     }
   ]
 }
