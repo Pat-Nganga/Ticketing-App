@@ -1,13 +1,8 @@
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .menu {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background: linear-gradient(45deg, #FFC371, #FF5F6D);
 }
 
@@ -15,15 +10,12 @@ form {
   padding: 10px;
   text-align: center;
   align-items: left;
-  margin-left: -150px;
 }
 
 .navigation {
   list-style: none;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
   margin-left: 150px;
 }
 
@@ -38,27 +30,43 @@ form {
 }
 
 .nav-link a:hover {
-  font-weight: bolder;
-  font-size: x-large;
   background-color: #FD7272;
   color: #FFF;
 }
 
 .search {
-  margin-top: 50px;
-  margin-left: 200px;
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border: none;
 }
 
-#search-input {
-  width: 350px;
-  margin-bottom: 50px;
+.search-button {
+  border: solid 1px #fff;
+  padding:10px;
+  background: transparent;
+  border-radius: 5px;
+  height: max-content;
+  margin-left: 10px;
+  color: #fff;
+  cursor: pointer;
 }
 
-.input {
-  border: 1px solid #FFD1DC;
-  height: auto;
-  border-radius: 10px;
-  padding: 12px;
-  background-color: #FFF;
-  color: #333;
+.search-button:hover {
+  background: #fff;
+  color: #FF5F6D;
+}
+
+.search > input {
+    border: solid 1px #fff;
+    padding: 10px;
+    background: transparent;
+    border-radius: 5px;
+    height: max-content;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.search>input::placeholder {
+ color: whitesmoke;
 }

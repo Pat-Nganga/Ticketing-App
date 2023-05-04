@@ -1,51 +1,36 @@
 import React, { useState, useEffect } from "react";
 import "./css/TicketList.css";
+import TicketCard from "./TicketCard";
 
-function TicketList({tickets,ticketId, updateCapacity}) {
- tickets.map((ticket)=>{console.log(ticket.id);})
+function TicketList({ tickets, ticketId, updateCapacity }) {
+  function handleDelete(ticketId) {
+    const updatedTickets = tickets.filter((ticket) => ticket.id !== ticketId);
 
+    fetch(`http://localhost:4300/tickets/${ticketId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+  }
 
   return (
-    <div className='ticket-list-container'>
-      {/* <h1>Ticket List</h1> */}
-      <div className='ticket-cards-container'>
+    <div className="ticket-list-container">
+      <div className="ticket-cards-container">
         {tickets.map((ticket) => (
-          <div key={ticket.id} className='ticket-card'>
-            <img
-              src={ticket.image}
-              alt={ticket.name}
-              className='ticket-image'
-            />
-
-            <div className='ticket-card'>
-              <h2 className='ticket-name'>{ticket.name}</h2>
-              <p className='ticket-location'>
-                <strong>Location:</strong>
-                {ticket.location}
-              </p>
-              <p className='ticket-date'>
-                <strong>Date:</strong>
-                {ticket.date}
-              </p>
-              <p className='ticket-capacity'>
-                <strong> Remaining tickets:</strong>
-                {ticket.available_tickets}
-              </p>
-            </div>
-            
-            <div className="buttons-container">
-              {/* <button onClick={() => handleDelete(ticket.id)}>Update</button>
-              <button onClick={() => handleDelete(ticket.id)}>Delete</button> */}
-              <button onClick={() => updateCapacity(ticket.id,ticket.available_tickets)}>
-                Buy button
-              </button>
-              
-            </div>
-          </div>
+          <TicketCard
+            key={ticket.id}
+            ticket={ticket}
+            updateCapacity={updateCapacity}
+            handleDelete={handleDelete}
+          />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default TicketList;

@@ -19,6 +19,7 @@ function NewTicketForm() {
       location,
       date,
       capacity,
+      available_tickets: capacity,
     };
 
     fetch("http://localhost:4300/tickets", {

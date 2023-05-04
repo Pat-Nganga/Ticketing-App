@@ -3,13 +3,16 @@
     flex-direction: column;
     border: 1px solid #cccccc;
     padding: 5px;
-    width: 30%;
+    width: 300px;
     margin: 0px 15px 20px 15px;
 }
+
 .ticket-list-container {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
+
 .ticket-cards-container{
   display: flex;
   flex-wrap: wrap;
