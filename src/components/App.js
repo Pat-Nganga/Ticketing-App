@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import TicketList from './TicketList'
 import NewTicketForm from './NewTicketForm'
 
+
 const App = () => {
   const [data, setData] = useState([])
   const [endpoint, setEndPoint] = useState('http://localhost:4300/tickets')
@@ -12,7 +13,7 @@ const App = () => {
 
     console.log('endpoint', endpoint)
     const tickets = await response.json()
-    console.log('tickets', tickets)
+    // console.log('tickets', tickets)
     return tickets
   }
   useEffect(() => {
@@ -26,18 +27,14 @@ const App = () => {
   }, [])
   return (
     <div className='App'>
-      <NavBar
-        setData={setData}
-        fetchData={fetchData}
-        setEndPoint={setEndPoint}
-      />
+      <NavBar setData={setData} fetchData={fetchData} setEndPoint={setEndPoint}>
+        
+        
+      </NavBar>
+
       <TicketList tickets={data} setData={setData} fetchData={fetchData} />
       <NewTicketForm />
     </div>
-    
-    
-    
-    
   )
 }
 

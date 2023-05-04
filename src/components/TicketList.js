@@ -18,13 +18,8 @@ function TicketList() {
         if (ticket.id === ticketId) {
           return {
             ...ticket,
-<<<<<<< HEAD
-            available_tickets: ticket.available_tickets - 1 ,
-          }
-=======
             available_tickets: ticket.available_tickets - 1,
           };
->>>>>>> main
         }
         return ticket;
       });
@@ -35,14 +30,9 @@ function TicketList() {
 
    
   return (
-<<<<<<< HEAD
-    <div className='ticket-list-container'>      
-      <div className='ticket-cards-container'>
-=======
     <div className="ticket-list-container">
       {/* <h1>Ticket List</h1> */}
       <div className="ticket-cards-container">
->>>>>>> main
         {tickets.map((ticket) => (
           <div key={ticket.id} className="ticket-card">
             <img
@@ -57,13 +47,6 @@ function TicketList() {
                 <strong>Location:</strong>
                 {ticket.location}
               </p>
-<<<<<<< HEAD
-              <button onClick={() => updateCapacity(ticket.id)}>
-                Buy Ticket
-              </button>
-
-             
-=======
               <p className="ticket-date">
                 <strong>Date:</strong>
                 {ticket.date}
@@ -73,7 +56,6 @@ function TicketList() {
                 {ticket.available_tickets}
               </p>
               <button onClick={() => updateCapacity(ticket.id)}>Buy button</button>
->>>>>>> main
             </div>
           </div>
         ))}
