@@ -1,7 +1,13 @@
-// import React from 'react'
+import React from 'react'
 
-// function Home() {
-//   return <h1>Home!</h1>
-// }
+import TicketList from './TicketList'
+import NewTicketForm from './NewTicketForm'
 
-// export default Home
+export default function Home({ tickets, setTickets }) {
+  return (
+    <>
+      <TicketList tickets={tickets} setTickets={setTickets} />
+      <NewTicketForm />
+    </>
+  )
+}

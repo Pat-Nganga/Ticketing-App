@@ -1,76 +1,49 @@
-import { useEffect, useState } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import { useState, useEffect } from 'react'
+
 import NavBar from './NavBar'
-import TicketList from './TicketList'
-import NewTicketForm from './NewTicketForm'
 import Home from './Home'
+import About from './About'
 import Contacts from './Contacts'
-import Events from './Events'
+import SearchResults from './SearchResults'
 
-const App = () => {
-  const [data, setData] = useState([])
-  const [endpoint, setEndPoint] = useState(
-    'http://localhost:4300/tickets?_sort=id&_order=desc'
-  )
+import './css/App.css'
 
-  const fetchData = async () => {
-    const response = await fetch(endpoint)
+const apiURL = 'http://localhost:4300/tickets'
 
-    // console.log('endpoint', endpoint)
-    const tickets = await response.json()
-    // console.log('tickets', tickets)
-    return tickets
-  }
-  function searchEvent(term) {
-   
-    const found = data.filter((event)=>event.name=== term)
-     console.log(term, found)
-    setData(found)   
-  }
-  
-  
-    function updateCapacity(ticketId,available_tickets) {
-      const updatedTickets = data.map((ticket) => {
-        if (ticket.id === ticketId) {
-          if (available_tickets !== 0){
-            return {
-              ...ticket,
-              available_tickets: ticket.available_tickets - 1,
-            }
+function App() {
+  const [tickets, setTickets] = useState([])
+  const [searchResults, setSearchResults] = useState([])
 
-
-          }
-          
-        }
-        return ticket
-      })
-      setData(updatedTickets)
-    }
-
-
-
-   
-
+  // 3. Create out useEffect function
   useEffect(() => {
-    fetchData()
-      .then((res) => {
-        setData(res)
-      })
-      .catch((err) => {
-        console.log('Error in fetching tickets: ', err)
-      })
+    fetch(apiURL)
+      .then((response) => response.json())
+      // 4. Setting *dogImage* to the image url that we received from the response above
+      .then((data) => setTickets(data))
   }, [])
-  return (
-    <div className='App'>
-      <NavBar
-        setData={setData}
-        fetchData={fetchData}
-        setEndPoint={setEndPoint}
-        searchEvent={searchEvent}
-      ></NavBar>
 
-      <TicketList tickets={data} setData={setData} fetchData={fetchData} updateCapacity={updateCapacity} />
-      <NewTicketForm />
+  return (
+    <div>
+      <NavBar tickets={tickets} setSearchResults={setSearchResults} />
+      <Routes>
+        <Route
+          path='/'
+          element={<Home tickets={tickets} setTickets={setTickets} />}
+        />
+        <Route path='/contacts' element={<Contacts />} />
+        <Route path='/about' element={<About />} />
+        <Route
+          path='/search'
+          element={
+            <SearchResults
+              searchResults={searchResults}
+              setTickets={setTickets}
+            />
+          }
+        />
+      </Routes>
     </div>
   )
 }

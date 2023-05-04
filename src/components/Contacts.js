@@ -1,17 +1,7 @@
-// import React from 'react'
+import React from 'react'
 
-// const Contacts = () => {
-//   return (
-//     <div>
-//       <h2>Contact Us</h2>
-//       <p>For any inquiries, please contact us at:</p>
-//       <ul>
-//         <li>Email: info@ticktopia.com</li>
-//         <li>Phone: +1 (123) 456-7890</li>
-//         <li>Address: 123 Main St, Anytown, USA</li>
-//       </ul>
-//     </div>
-//   )
-// }
+function Contacts() {
+  return <h1>Contact list!</h1>
+}
 
-// export default Contacts
+export default Contacts

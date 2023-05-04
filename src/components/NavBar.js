@@ -1,34 +1,11 @@
-
-
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './css/NavBar.css'
 
-const NavBar = ({ setData, fetchData, setEndPoint,searchEvent }) => {
+const NavBar = ({ tickets, setSearchResults }) => {
+  const navigate = useNavigate()
+
   const [searchTerm, setSearchTerm] = useState('')
-
-  const handleSearchSubmit = (text) => {
-    setSearchTerm(text)
-
-    const url = `http://localhost:4300/tickets?_sort=id&_order=desc&q=${text}`
-     console.log('text', text)
-    // console.log('url', url)
-    setEndPoint(url)
-    fetchData()
-      .then((res) => {
-        console.log('res>>', res)
-        setData(res)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    const text = event.target.elements[0].value
-    searchEvent(text)
-  }
-
   return (
     <div className='menu'>
       <div className='logo'>
@@ -43,17 +20,25 @@ const NavBar = ({ setData, fetchData, setEndPoint,searchEvent }) => {
             <a href='/contacts'>Contacts</a>
           </li>
           <li className='nav-link'>
-            <a href='/events'>Events</a>
+            <a href='/about'>About</a>
           </li>
         </ul>
       </nav>
       <div className='search'>
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            handleSubmit(searchTerm, tickets, setSearchResults, navigate)
+          }}
+        >
           <input
             type='text'
             placeholder='Search here'
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => {
+              setSearchTerm(e.target.value)
+              console.log(searchTerm)
+            }}
             id='search-input'
             className='input'
           />
@@ -66,4 +51,12 @@ const NavBar = ({ setData, fetchData, setEndPoint,searchEvent }) => {
   )
 }
 
+function handleSubmit(searchText, tickets, setSearchResults, navigate) {
+  let result = []
+  result = tickets.filter((ticket) => ticket.name == searchText)
+  if (result.length > 0) {
+    setSearchResults(result)
+    navigate('/search')
+  }
+}
 export default NavBar

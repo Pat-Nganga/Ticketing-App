@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './css/TicketList.css'
 
-function TicketList({tickets,ticketId, updateCapacity}) {
- tickets.map((ticket)=>{console.log(ticket.id);})
-
- 
-
-
-
-
-   
+const apiURL = 'http://localhost:4300/tickets'
+export default function TicketList({ tickets, setTickets }) {
   return (
     <div className='ticket-list-container'>
-      {/* <h1>Ticket List</h1> */}
       <div className='ticket-cards-container'>
         {tickets.map((ticket) => (
           <div key={ticket.id} className='ticket-card'>
@@ -36,10 +28,11 @@ function TicketList({tickets,ticketId, updateCapacity}) {
                 <strong> Remaining tickets:</strong>
                 {ticket.available_tickets}
               </p>
-              <button onClick={() => updateCapacity(ticket.id,ticket.available_tickets)}>
+              <button
+                onClick={() => updateCapacity(ticket, setTickets, tickets)}
+              >
                 Buy button
               </button>
-              
             </div>
           </div>
         ))}
@@ -48,5 +41,29 @@ function TicketList({tickets,ticketId, updateCapacity}) {
   )
 }
 
-export default TicketList
+function updateCapacity(ticket, setTickets, tickets) {
+  // return setTickets(tickets.map(ticket => {
+  //     if (ticket.available_tickets==0) return {...ticket}
+  //   }))
+  return fetch(`${apiURL}/${ticket.id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      ...ticket,
+      available_tickets: ticket.available_tickets - 1,
+    }),
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      setTickets(
+        tickets.map((ticket) => {
+          return ticket.id === result.id ? { ...result } : { ...ticket }
+        })
+      )
+    })
+    .catch((err) => console.log('error: ', err))
+}
 
+const updateEvent = (ticket) => {}
