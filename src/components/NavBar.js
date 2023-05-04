@@ -1,63 +1,68 @@
-import React, { useState, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
+
+import React, { useState } from 'react'
 import './css/NavBar.css'
 
-function NavBar() {
+const NavBar = ({ setData, fetchData, setEndPoint,searchEvent }) => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [tickets, setTickets] = useState([])
 
-  useEffect(() => {
-    fetch('http://localhost:4300/tickets')
-      .then((response) => response.json())
-      .then((tickets) => setTickets(tickets))
-  }, [])
+  const handleSearchSubmit = (text) => {
+    setSearchTerm(text)
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value)
+    const url = `http://localhost:4300/tickets?_sort=id&_order=desc&q=${text}`
+     console.log('text', text)
+    // console.log('url', url)
+    setEndPoint(url)
+    fetchData()
+      .then((res) => {
+        console.log('res>>', res)
+        setData(res)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
   }
 
-  const filteredTickets = tickets.filter((ticket) =>
-    ticket.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const text = event.target.elements[0].value
+    searchEvent(text)
+  }
 
   return (
-    <nav className='menu'>
+    <div className='menu'>
       <div className='logo'>
         <h3>TICKETOPIA</h3>
       </div>
-      <ul className='navigation'>
-        <li className='nav-link'>
-          <a href='/'>Home</a>
-        </li>
-        <li className='nav-link'>
-          <a href='/contacts'>Contacts</a>
-        </li>
-        <li className='nav-link'>
-          <a href='/events'>Events</a>
-        </li>
-        <li className='search'>
-          <form>
-            <input
-              type='text'
-              placeholder='Search'
-              value={searchTerm}
-              onChange={handleSearchChange}
-              id='search-input'
-              className='input'
-            />
-            <button type='submit' className='search-button'>
-              <FontAwesomeIcon icon={faSearch} />
-            </button>
-          </form>
-          <ul>
-            {filteredTickets.map((ticket) => (
-              <li key={ticket.id}>{ticket.name}</li>
-            ))}
-          </ul>
-        </li>
-      </ul>
-    </nav>
+      <nav>
+        <ul className='navigation'>
+          <li className='nav-link'>
+            <a href='/'>Home</a>
+          </li>
+          <li className='nav-link'>
+            <a href='/contacts'>Contacts</a>
+          </li>
+          <li className='nav-link'>
+            <a href='/events'>Events</a>
+          </li>
+        </ul>
+      </nav>
+      <div className='search'>
+        <form onSubmit={handleSubmit}>
+          <input
+            type='text'
+            placeholder='Search here'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            id='search-input'
+            className='input'
+          />
+          <button type='submit' className='search-button'>
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
   )
 }
 
