@@ -10,11 +10,11 @@ import SearchResults from './SearchResults'
 
 import './css/App.css'
 
-const apiURL = 'http://localhost:4300/tickets'
+const apiURL = 'https://9561-102-215-76-91.ngrok-free.app/tickets'
 
 function App() {
   const [tickets, setTickets] = useState([])
-  
+
 
   function fetchTickets(apiURL) {
     fetch(apiURL)
@@ -35,7 +35,7 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
-       const updatedTickets= tickets.filter((ticket) => ticket.id !== ticketId)
+        const updatedTickets = tickets.filter((ticket) => ticket.id !== ticketId)
         setTickets(updatedTickets)
       })
       .catch((error) => console.error(error))
