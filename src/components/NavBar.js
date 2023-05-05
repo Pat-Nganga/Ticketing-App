@@ -17,10 +17,10 @@ const NavBar = ({ tickets, setSearchResults }) => {
             <a href='/'>Home</a>
           </li>
           <li className='nav-link'>
-            <a href='/contacts'>Contacts</a>
+            <a href='/about'>About</a>
           </li>
           <li className='nav-link'>
-            <a href='/about'>About</a>
+            <a href='/contacts'>Contacts</a>
           </li>
         </ul>
       </nav>
@@ -44,7 +44,7 @@ const NavBar = ({ tickets, setSearchResults }) => {
           />
           <button type='submit' className='search-button'>
             Search
-          </button>
+          </button> 
         </form>
       </div>
     </div>

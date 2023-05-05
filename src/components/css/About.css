@@ -1,0 +1,20 @@
+.about-container {
+  background-image: url('https://images.unsplash.com/photo-1605025471746-e0926f1f79c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGFydHklMjBwZW9wbGV8ZW58MHx8MHx8&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  padding: 50px;
+   height: 100vh
+}
+
+.about-container h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.about-container p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}

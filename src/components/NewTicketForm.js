@@ -1,4 +1,3 @@
-// Here is the create function to create and add a new ticket
 
 import React, { useState } from 'react'
 import './css/NewTicketForm.css'
@@ -32,7 +31,7 @@ function NewTicketForm() {
       .then((data) => console.log(data))
       .catch((error) => console.error(error))
 
-    // Clear form inputs
+    
     setImage('')
     setName('')
     setLocation('')
@@ -42,7 +41,7 @@ function NewTicketForm() {
 
   return (
     <>
-      <h2>Create Form</h2>
+      <h2>Create New Ticket</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor='image-url'>Image URL:</label>

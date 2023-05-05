@@ -32,8 +32,8 @@ function App() {
           path='/'
           element={<Home tickets={tickets} setTickets={setTickets} />}
         />
-        <Route path='/contacts' element={<Contacts />} />
         <Route path='/about' element={<About />} />
+        <Route path='/contacts' element={<Contacts />} />
         <Route
           path='/search'
           element={

@@ -1,8 +1,27 @@
+
 import React from 'react'
 import './css/TicketList.css'
 
 const apiURL = 'http://localhost:4300/tickets'
+
 export default function TicketList({ tickets, setTickets }) {
+  function handleDelete(ticketId) {
+    const updatedTickets = tickets.filter((ticket) => ticket.id !== ticketId)
+
+    fetch(`${apiURL}/${ticketId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setTickets(updatedTickets)
+        console.log(data)
+      })
+      .catch((error) => console.error(error))
+  }
+
   return (
     <div className='ticket-list-container'>
       <div className='ticket-cards-container'>
@@ -28,11 +47,13 @@ export default function TicketList({ tickets, setTickets }) {
                 <strong> Remaining tickets:</strong>
                 {ticket.available_tickets}
               </p>
+             
               <button
                 onClick={() => updateCapacity(ticket, setTickets, tickets)}
               >
                 Buy button
               </button>
+              <button onClick={() => handleDelete(ticket.id)}>Delete</button>
             </div>
           </div>
         ))}
