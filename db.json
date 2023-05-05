@@ -1,24 +1,6 @@
 {
   "tickets": [
     {
-      "id": 1,
-      "name": "Betika Rally Cross",
-      "location": "Machakos People's Park",
-      "date": "Wednesday, 3rd May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/RX1_2023_Official_Poster_5.jpg1681972071.jpg",
-      "capacity": "100",
-      "available_tickets": 3
-    },
-    {
-      "id": 2,
-      "name": "The Maze, 3rd Edition",
-      "location": "The Vineyard, Ridgeways",
-      "date": "Saturday, 6th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/WhatsApp_Image_2023-04-10_at_19.15.15.jpeg1681194508.jpg",
-      "capacity": "80",
-      "available_tickets": 6
-    },
-    {
       "id": 4,
       "name": "Walker Town Nakuru",
       "location": "Rift Valley Sports Club",
@@ -34,7 +16,7 @@
       "date": "Sunday, 7th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_05_07_KIKe_Neuro-Soul_with_Ianafri.png1681752658.jpg",
       "capacity": "60",
-      "available_tickets": "10"
+      "available_tickets": 8
     },
     {
       "id": 7,
@@ -97,7 +79,7 @@
       "date": "Thursday,08-09 June 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_Sustainable_Tourism.jpeg1673257925.jpg",
       "capacity": "30",
-      "available_tickets": 9
+      "available_tickets": 8
     }
   ]
 }

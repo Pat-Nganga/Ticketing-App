@@ -22,6 +22,32 @@ export default function TicketList({ tickets, setTickets }) {
       .catch((error) => console.error(error))
   }
 
+  function updateCapacity(ticket, setTickets, tickets) {
+     console.log(">>>>>> here", ticket);
+    // return setTickets(tickets.map(ticket => {
+    //     if (ticket.available_tickets==0) return {...ticket}
+    //   }))
+    return fetch(`${apiURL}/${ticket.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...ticket,
+        available_tickets: ticket.available_tickets - 1,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setTickets(
+          tickets.map((ticket) => {
+            return ticket.id === result.id ? { ...result } : { ...ticket };
+          })
+        );
+      })
+      .catch((err) => console.log("error: ", err));
+  }
+
   return (
     <div className='ticket-list-container'>
       <div className='ticket-cards-container'>
@@ -62,29 +88,3 @@ export default function TicketList({ tickets, setTickets }) {
   )
 }
 
-function updateCapacity(ticket, setTickets, tickets) {
-  // return setTickets(tickets.map(ticket => {
-  //     if (ticket.available_tickets==0) return {...ticket}
-  //   }))
-  return fetch(`${apiURL}/${ticket.id}`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      ...ticket,
-      available_tickets: ticket.available_tickets - 1,
-    }),
-  })
-    .then((res) => res.json())
-    .then((result) => {
-      setTickets(
-        tickets.map((ticket) => {
-          return ticket.id === result.id ? { ...result } : { ...ticket }
-        })
-      )
-    })
-    .catch((err) => console.log('error: ', err))
-}
-
-const updateEvent = (ticket) => {}
