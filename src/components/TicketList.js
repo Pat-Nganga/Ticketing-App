@@ -1,8 +1,10 @@
 
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './css/TicketList.css'
 
 const apiURL = 'http://localhost:4300/tickets'
+
+
 
 export default function TicketList({ tickets, setTickets }) {
   function handleDelete(ticketId) {
@@ -21,6 +23,39 @@ export default function TicketList({ tickets, setTickets }) {
       })
       .catch((error) => console.error(error))
   }
+const [editTicket, setEditTicket] = useState(null);
+const [showEditModal, setShowEditModal] = useState(false);
+// const [selectedTicketId, setSelectedTicketId] = useState(null)
+
+function handleEdit(ticketId) {
+  const ticketToEdit = tickets.find((ticket) => ticket.id === ticketId);
+  setEditTicket(ticketToEdit);
+  setShowEditModal(true);
+}
+
+
+function handleUpdate() {
+  fetch(`${apiURL}/${editTicket.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(editTicket),
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      setTickets(
+        tickets.map((ticket) => {
+          return ticket.id === result.id ? { ...result } : { ...ticket };
+        })
+      );
+      setShowEditModal(false);
+    })
+    .catch((err) => console.log("error: ", err));
+}
+
+
+
 
   function updateCapacity(ticket, setTickets, tickets) {
      console.log(">>>>>> here", ticket);
@@ -49,42 +84,101 @@ export default function TicketList({ tickets, setTickets }) {
   }
 
   return (
-    <div className='ticket-list-container'>
-      <div className='ticket-cards-container'>
+    <div className="ticket-list-container">
+      <div className="ticket-cards-container">
         {tickets.map((ticket) => (
-          <div key={ticket.id} className='ticket-card'>
+          <div key={ticket.id} className="ticket-card">
             <img
               src={ticket.image}
               alt={ticket.name}
-              className='ticket-image'
+              className="ticket-image"
             />
 
-            <div className='ticket-card'>
-              <h2 className='ticket-name'>{ticket.name}</h2>
-              <p className='ticket-location'>
+            <div className="ticket-card">
+              <h2 className="ticket-name">{ticket.name}</h2>
+              <p className="ticket-location">
                 <strong>Location:</strong>
                 {ticket.location}
               </p>
-              <p className='ticket-date'>
+              <p className="ticket-date">
                 <strong>Date:</strong>
                 {ticket.date}
               </p>
-              <p className='ticket-capacity'>
+              <p className="ticket-capacity">
                 <strong> Remaining tickets:</strong>
                 {ticket.available_tickets}
               </p>
-             
+
+              {showEditModal && (
+                <div className="edit-modal">
+                  <div className="edit-modal-content">
+                    <h2>Edit Ticket Details</h2>
+                    <label>
+                      Name:
+                      <input
+                        type="text"
+                        value={editTicket.name}
+                        onChange={(e) =>
+                          setEditTicket({ ...editTicket, name: e.target.value })
+                        }
+                      />
+                    </label>
+                    <label>
+                      Location:
+                      <input
+                        type="text"
+                        value={editTicket.location}
+                        onChange={(e) =>
+                          setEditTicket({
+                            ...editTicket,
+                            location: e.target.value,
+                          })
+                        }
+                      />
+                    </label>
+                    <label>
+                      Date:
+                      <input
+                        type="date"
+                        value={editTicket.date}
+                        onChange={(e) =>
+                          setEditTicket({ ...editTicket, date: e.target.value })
+                        }
+                      />
+                    </label>
+                    <label>
+                      Available Tickets:
+                      <input
+                        type="number"
+                        value={editTicket.available_tickets}
+                        onChange={(e) =>
+                          setEditTicket({
+                            ...editTicket,
+                            available_tickets: e.target.value,
+                          })
+                        }
+                      />
+                    </label>
+                    <button onClick={() => handleUpdate()}>Save Changes</button>
+                    <button onClick={() => setShowEditModal(false)}>
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              )}
+
               <button
                 onClick={() => updateCapacity(ticket, setTickets, tickets)}
               >
                 Buy button
               </button>
               <button onClick={() => handleDelete(ticket.id)}>Delete</button>
+              <button onClick={() => handleEdit(ticket.id)}>Edit</button>
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
 
