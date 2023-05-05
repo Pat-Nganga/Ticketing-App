@@ -2,8 +2,6 @@
 import React from 'react'
 import './css/TicketList.css'
 
-const apiURL = 'http://localhost:4300/tickets'
-
 export default function TicketList({ tickets, setTickets,deleteTicket ,updateCapacity}) {
  
   
@@ -51,6 +49,3 @@ const showTickets=
   )
 
   }
-
-
-const updateEvent = (ticket) => {}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './css/NavBar.css'
 
 const NavBar = ({ tickets,setTickets }) => {
@@ -52,7 +52,7 @@ const NavBar = ({ tickets,setTickets }) => {
 }
 
 function handleSubmit(searchText, tickets, setTickets, navigate) {
-  let result =tickets.filter((ticket) => ticket.name == searchText)
+  let result =tickets.filter((ticket) => ticket.name === searchText)
 
   
     setTickets(result)
