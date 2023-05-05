@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './css/NavBar.css'
 
-const NavBar = ({ tickets, setSearchResults }) => {
+const NavBar = ({ tickets,setTickets }) => {
   const navigate = useNavigate()
 
   const [searchTerm, setSearchTerm] = useState('')
@@ -28,7 +28,7 @@ const NavBar = ({ tickets, setSearchResults }) => {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            handleSubmit(searchTerm, tickets, setSearchResults, navigate)
+            handleSubmit(searchTerm, tickets, setTickets, navigate)
           }}
         >
           <input
@@ -51,12 +51,14 @@ const NavBar = ({ tickets, setSearchResults }) => {
   )
 }
 
-function handleSubmit(searchText, tickets, setSearchResults, navigate) {
-  let result = []
-  result = tickets.filter((ticket) => ticket.name == searchText)
-  if (result.length > 0) {
-    setSearchResults(result)
+function handleSubmit(searchText, tickets, setTickets, navigate) {
+  let result =tickets.filter((ticket) => ticket.name == searchText)
+
+  
+    setTickets(result)
     navigate('/search')
-  }
+    
+  
+
 }
 export default NavBar

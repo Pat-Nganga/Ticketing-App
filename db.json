@@ -1,58 +1,13 @@
 {
   "tickets": [
     {
-      "id": 1,
-      "name": "Betika Rally Cross",
-      "location": "Machakos People's Park",
-      "date": "Wednesday, 3rd May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/RX1_2023_Official_Poster_5.jpg1681972071.jpg",
-      "capacity": "100",
-      "available_tickets": 3
-    },
-    {
-      "id": 2,
-      "name": "The Maze, 3rd Edition",
-      "location": "The Vineyard, Ridgeways",
-      "date": "Saturday, 6th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/WhatsApp_Image_2023-04-10_at_19.15.15.jpeg1681194508.jpg",
-      "capacity": "80",
-      "available_tickets": 6
-    },
-    {
-      "id": 4,
-      "name": "Walker Town Nakuru",
-      "location": "Rift Valley Sports Club",
-      "date": "Saturday, 6th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/PHOTO-2023-04-22-09-51-52.jpg1682146628.jpg",
-      "capacity": "110",
-      "available_tickets": "10"
-    },
-    {
       "id": 6,
       "name": "Kike Neuro-Soul Ianafri",
       "location": "Ayira's Neo - Soul Cafe Shiko Rd, off Elgeyo Marak",
       "date": "Sunday, 7th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_05_07_KIKe_Neuro-Soul_with_Ianafri.png1681752658.jpg",
       "capacity": "60",
-      "available_tickets": "10"
-    },
-    {
-      "id": 7,
-      "name": "The 14th AFFORDABLE Art Show",
-      "location": "Ayira's Neo - Soul Cafe Shiko Rd, off Elgeyo Marak",
-      "date": "Friday, 12th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/Final_12-14_May_2023_AAS_Poster.jpg1680683701.jpg",
-      "capacity": "40",
-      "available_tickets": "10"
-    },
-    {
-      "id": 8,
-      "name": "Tiny & MamaPop Up",
-      "location": "Arbor Place,Lavington",
-      "date": "Saturday,27th May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/TinyMamaMay.jpg1682316529.jpg",
-      "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 9
     },
     {
       "id": 9,
@@ -61,7 +16,7 @@
       "date": "Sunday,28th May 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/PHOTO-2023-05-01-14-00-47.jpg1682939497.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 3
     },
     {
       "id": 11,
@@ -70,7 +25,7 @@
       "date": "Sunday,11th June 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_06_11_An_Afternoon_of_Jazz_and_Old_School_Kenyan_RnB_with_Mkavita_and_Jay.png1679989619.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 9
     },
     {
       "id": 13,
@@ -79,7 +34,7 @@
       "date": "Sunday,23 July 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_07_23_Mkavita_-_Shadows_EP_Launch.png1678681502.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 9
     },
     {
       "id": 14,
@@ -87,15 +42,6 @@
       "location": "Kasese",
       "date": "Saturday,02 September 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/TLRM_-_IG.png1681289663.jpg",
-      "capacity": "30",
-      "available_tickets": "10"
-    },
-    {
-      "id": 15,
-      "name": "2023 Sustainable Tourism Africa Summit",
-      "location": "Mombasa,Coast of Kenya",
-      "date": "Thursday,08-09 June 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_Sustainable_Tourism.jpeg1673257925.jpg",
       "capacity": "30",
       "available_tickets": 9
     }

@@ -14,23 +14,67 @@ const apiURL = 'http://localhost:4300/tickets'
 
 function App() {
   const [tickets, setTickets] = useState([])
-  const [searchResults, setSearchResults] = useState([])
+  
 
-  // 3. Create out useEffect function
-  useEffect(() => {
+  function fetchTickets(apiURL) {
     fetch(apiURL)
       .then((response) => response.json())
-      // 4. Setting *dogImage* to the image url that we received from the response above
+
       .then((data) => setTickets(data))
+  }
+  useEffect(() => {
+    fetchTickets(apiURL)
   }, [])
 
+  function handleDelete(ticketId) {
+    fetch(`${apiURL}/${ticketId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+       const updatedTickets= tickets.filter((ticket) => ticket.id !== ticketId)
+        setTickets(updatedTickets)
+      })
+      .catch((error) => console.error(error))
+  }
+  function updateCapacity(ticket, setTickets, tickets) {
+    return fetch(`${apiURL}/${ticket.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...ticket,
+        available_tickets: ticket.available_tickets - 1,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setTickets(
+          tickets.map((ticket) => {
+            return ticket.id === result.id ? { ...result } : { ...ticket }
+          })
+        )
+      })
+      .catch((err) => console.log('error: ', err))
+  }
   return (
     <div>
-      <NavBar tickets={tickets} setSearchResults={setSearchResults} />
+      <NavBar tickets={tickets} setTickets={setTickets} />
       <Routes>
         <Route
           path='/'
-          element={<Home tickets={tickets} setTickets={setTickets} />}
+          element={
+            <Home
+              tickets={tickets}
+              setTickets={setTickets}
+              deleteOperation={handleDelete}
+              updateCapacity={updateCapacity}
+            />
+          }
         />
         <Route path='/about' element={<About />} />
         <Route path='/contacts' element={<Contacts />} />
@@ -38,8 +82,10 @@ function App() {
           path='/search'
           element={
             <SearchResults
-              searchResults={searchResults}
+              searchResults={tickets}
               setTickets={setTickets}
+              deleteOperation={handleDelete}
+              updateCapacity={updateCapacity}
             />
           }
         />
