@@ -1,15 +1,6 @@
 {
   "tickets": [
     {
-      "id": 1,
-      "name": "Betika Rally Cross",
-      "location": "Machakos People's Park",
-      "date": "Wednesday, 3rd May 2023",
-      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/RX1_2023_Official_Poster_5.jpg1681972071.jpg",
-      "capacity": "100",
-      "available_tickets": "4"
-    },
-    {
       "id": 2,
       "name": "The Maze, 3rd Edition",
       "location": "The Vineyard, Ridgeways",
@@ -88,7 +79,7 @@
       "date": "Saturday,10th June 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/KHS_FLOWER_BALL_.jpeg1679301152.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 9
     },
     {
       "id": 11,
@@ -97,7 +88,7 @@
       "date": "Sunday,11th June 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_06_11_An_Afternoon_of_Jazz_and_Old_School_Kenyan_RnB_with_Mkavita_and_Jay.png1679989619.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 9
     },
     {
       "id": 12,
@@ -106,7 +97,7 @@
       "date": "Sunday,09 July 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_07_09_KIKe_Neuro-Soul_with_Patience_Shalom_July_2023.png1681753359.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 9
     },
     {
       "id": 13,
@@ -115,7 +106,7 @@
       "date": "Sunday,23 July 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_07_23_Mkavita_-_Shadows_EP_Launch.png1678681502.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 8
     },
     {
       "id": 14,
@@ -124,7 +115,7 @@
       "date": "Saturday,02 September 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/TLRM_-_IG.png1681289663.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 9
     },
     {
       "id": 15,
@@ -133,15 +124,25 @@
       "date": "Thursday,08-09 June 2023",
       "image": "https://www.ticketsasa.com/components/com_enmasse/upload/2023_Sustainable_Tourism.jpeg1673257925.jpg",
       "capacity": "30",
-      "available_tickets": "10"
+      "available_tickets": 9
     },
     {
       "image": "https://www.ticketsasa.com/images/images.php?src=components/com_enmasse/upload/TLRM_-_IG.png1681289663.jpg&h=320&w=320&zc=1&q=100&s=1&f=3,5|4,-5",
-      "title": "The Tusker Lite Rwenzori Marathon",
+      "name": "The Tusker Lite Rwenzori Marathon",
+      "location": "Kasese",
+      "date": "Saturday, 2nd September 2023",
+      "capacity": "50",
+      "id": 17,
+      "available_tickets": 26
+    },
+    {
+      "image": "https://www.ticketsasa.com/components/com_enmasse/upload/TLRM_-_IG.png1681289663.jpg",
+      "name": "The Tusker Lite Rwenzori Marathon",
       "location": "Kasese",
       "date": "Saturday, 2nd September 2023",
       "capacity": "60",
-      "id": 16
+      "available_tickets": "20",
+      "id": 18
     }
   ]
 }

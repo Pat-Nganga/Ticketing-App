@@ -8,7 +8,10 @@ function NewTicketForm() {
   const [location, setLocation] = useState('')
   const [date, setDate] = useState('')
   const [capacity, setCapacity] = useState('')
+  const [available_tickets, setAvailableTickets] = useState('')
+  
 
+  
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -18,6 +21,7 @@ function NewTicketForm() {
       location,
       date,
       capacity,
+      available_tickets,
     }
 
     fetch('http://localhost:4300/tickets', {
@@ -37,12 +41,13 @@ function NewTicketForm() {
     setLocation('')
     setDate('')
     setCapacity('')
+    setAvailableTickets('')
   }
 
   return (
     <>
       <h2>Create New Ticket</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="Add-Form">
         <div>
           <label htmlFor='image-url'>Image URL:</label>
           <input
@@ -94,6 +99,16 @@ function NewTicketForm() {
             type='number'
             value={capacity}
             onChange={(event) => setCapacity(event.target.value)}
+          />
+        </div>
+        <br />
+        <div>
+          <label htmlFor='available_tickets'>Available Tickets:</label>
+          <input
+            id='available_tickets'
+            type='number'
+            value={available_tickets}
+            onChange={(event) => setAvailableTickets(event.target.value)}
           />
         </div>
         <br />

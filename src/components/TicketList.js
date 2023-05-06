@@ -25,10 +25,12 @@ export default function TicketList({ tickets, setTickets }) {
   }
 const [editTicket, setEditTicket] = useState(null);
 const [showEditModal, setShowEditModal] = useState(false);
-// const [selectedTicketId, setSelectedTicketId] = useState(null)
+
 
 function handleEdit(ticketId) {
-  const ticketToEdit = tickets.find((ticket) => ticket.id === ticketId);
+  const ticketToEdit = tickets.find((ticket) =>
+    ticketId ? ticketId === ticket.id : null
+  )
   setEditTicket(ticketToEdit);
   setShowEditModal(true);
 }
@@ -58,10 +60,7 @@ function handleUpdate() {
 
 
   function updateCapacity(ticket, setTickets, tickets) {
-     console.log(">>>>>> here", ticket);
-    // return setTickets(tickets.map(ticket => {
-    //     if (ticket.available_tickets==0) return {...ticket}
-    //   }))
+   
     return fetch(`${apiURL}/${ticket.id}`, {
       method: "PATCH",
       headers: {
@@ -107,6 +106,7 @@ function handleUpdate() {
               <p className="ticket-capacity">
                 <strong> Remaining tickets:</strong>
                 {ticket.available_tickets}
+                
               </p>
 
               {showEditModal && (
