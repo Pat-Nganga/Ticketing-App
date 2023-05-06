@@ -15,7 +15,7 @@ form {
   padding: 10px;
   text-align: center;
   align-items: left;
-  /* margin-left: -150px; */
+
 }
 
 .navigation {
@@ -38,8 +38,7 @@ form {
 }
 
 .nav-link a:hover {
-  /* font-weight: bolder; */
-  /* font-size: x-large; */
+ 
   background-color: #FD7272;
   color: #FFF;
 }
@@ -62,66 +61,3 @@ form {
   background-color: #FFF;
   color: #333;
 }
- /* .menu {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: #F95759;
-padding: 10px 20px;
-border-bottom: 5px solid #E63B3F;
-} 
-
-.logo h3 {
-font-size: 28px;
-margin: 0;
-color: #fff;
-text-shadow: 2px 2px #E63B3F;
-}
-
-.navigation {
-display: flex;
-list-style: none;
-margin: 0;
-padding: 0;
-}
-
-.navigation li:not(:last-child) {
-margin-right: 20px;
-}
-
-.nav-link a {
-font-size: 18px;
-text-decoration: none;
-color: #fff;
-text-shadow: 2px 2px #E63B3F;
-}
-
-.search form {
-display: flex;
-align-items: center;
-}
-
-.search input {
-padding: 8px;
-border: 1px solid #ccc;
-border-radius: 5px;
-font-size: 16px;
-margin-right: 10px;
-}
-
-.search-button {
-padding: 8px 12px;
-background-color: #fff;
-color: #F95759;
-border: none;
-border-radius: 5px;
-font-size: 16px;
-cursor: pointer;
-text-shadow: 2px 2px #E63B3F;
-}
-
-.search-button:hover {
-background-color: #E63B3F;
-color: #fff;
-} */
-
