@@ -24,7 +24,7 @@ function NewTicketForm() {
       available_tickets,
     }
 
-    fetch('http://localhost:4300/tickets', {
+    fetch('https://ticketing-data.onrender.com/tickets', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -52,9 +52,7 @@ const NavBar = ({ tickets, setSearchResults }) => {
             id="search-input"
             className="input"
           />
-          {/* <button type="submit" className="search-button">
-            Search
-          </button> */}
+        
         </form>
       </div>
     </div>

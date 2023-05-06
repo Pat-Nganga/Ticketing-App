@@ -9,7 +9,7 @@ import Contacts from "./Contacts";
 
 import "./css/App.css";
 
-const apiURL = "http://localhost:4300/tickets";
+const apiURL = "https://ticketing-data.onrender.com/tickets";
 
 function App() {
   const [tickets, setTickets] = useState([]);

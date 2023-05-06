@@ -1,8 +1,8 @@
 
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import './css/TicketList.css'
 
-const apiURL = 'http://localhost:4300/tickets'
+const apiURL = 'https://ticketing-data.onrender.com/tickets'
 
 
 
